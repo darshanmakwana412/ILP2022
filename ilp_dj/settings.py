@@ -23,8 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-##-cmei-!)oic=@gg&*0e7ep=%g489&(^!q6vlqqw^ob-s#90@'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# SECURITY WARNING: don't run with debug false in production!
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','139.59.41.17', 'ilp.sarc-iitb.org', 'www.ilp.sarc-iitb.org']
 
@@ -132,7 +132,7 @@ MEDIA_URL = '/resume/'
 # STATICFILES_DIRS = ['static']
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    '/var/www/static/',
+    # '/var/www/static/',   # Depricated Directory file "dir does not exist just like your life"
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

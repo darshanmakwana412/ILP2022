@@ -43,7 +43,11 @@
             <div class="project-card">
     
                 <div class="project-head" style="display: flex; flex-wrap: wrap;">
-                    <h1>{{proj.title}}</h1>
+                    {% if proj.eligible %}
+                        <h1>{{proj.title}}</h1>
+                    {% else %}
+                        <h1 style="color: red">{{proj.title}}</h1>
+                    {% endif %}
                     <p><i style="font-size: 2em ; margin-left: 20px ">{{proj.company}}</i></p>
                     <label class="container">
                         <select name="{{proj.id}} preference" style="    background-color: transparent;

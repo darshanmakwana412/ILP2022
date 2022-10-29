@@ -1,3 +1,4 @@
+from sqlite3 import complete_statement
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from .models import Project, Profile, Phonathon_data
@@ -10,7 +11,33 @@ from backend.serializers import Phonathon_serializer
 from backend.models import Phonathon_data
 from rest_framework.decorators import api_view
 import csv
-# from rest_framework.decorators import api_view
+import pandas as pd
+
+def is_eligible(project):
+    return False
+
+def update_projects(request):
+
+    sheet_url = 'https://docs.google.com/spreadsheets/d/1ZudFEWplVN6S9tsoio6TXueuJ-maV1FW8_jSmBind4c/edit#gid=0'
+    data = sheet_url.replace('/edit#gid=', '/export?format=csv&gid=')
+    data = pd.read_csv(data)
+
+    for i in range(len(data)):
+        Project.objects.create(
+            title = data.iloc[i]["title"],
+            company = data.iloc[i]["company"],
+            details = data.iloc[i]["details"],
+            place = data.iloc[i]["place"],
+            stipend = data.iloc[i]["stipend"],
+            learnings = data.iloc[i]["learnings"],
+            branch = data.iloc[i]["branch"],
+            year = data.iloc[i]["year"],
+            prereq = data.iloc[i]["prereq"],
+            deliverables = data.iloc[i]["deliverables"],
+            duration = data.iloc[i]["duration"]
+        )
+
+    return redirect(projects)
 
 # Create your views here.
 def down(request):
@@ -179,4 +206,3 @@ def Phonathon_save(request):
 class PhonathonViewSet(viewsets.ModelViewSet):
    queryset = Phonathon_data.objects.all()
    serializer_class = Phonathon_serializer
-    
