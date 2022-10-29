@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1">
+    <link rel="stylesheet" href="{% static 'Register.css' %}">
+    <style>
+        #side-lg
+{
+  height: 90px;
+  position: absolute;
+  top:20px;
+  right: 40px;
+}
+@media (max-width: 605px) {
+  #side-lg{
+    height: 50px;
+  }
+}
+#subm-btn
+{
+  cursor: pointer;
+}
+#subm-btn:hover {
+ color: #eae8dc;
+ background-color: #e85a50;
+}
+    </style>
+    <link rel="icon" type="image/png" href="{% static 'logo.png' %}"/>
+    <title>Industrial Learning Program</title>
+</head>
+<body>
+ <img src="{% static 'logo.png' %}" id="side-lg">
+    <div class="home">
+        <div id="main-heading-projects"><h1>Projects</h1></div>
+        <h3 style="color: #e85a50; text-align:center">{{error}}</h3>
+        <form action="update" method="post">
+            {% csrf_token %}
+            {% for proj in projects %}
+            <div class="project-card">
+    
+                <div class="project-head" style="display: flex; flex-wrap: wrap;">
+                    <h1>{{proj.title}}</h1>
+                    <p><i style="font-size: 2em ; margin-left: 20px ">{{proj.company}}</i></p>
+                    <label class="container">
+                        <select name="{{proj.id}} preference" style="    background-color: transparent;
+                        height: 30px;
+                        width: 30px;">
+                            <option selected value="0"></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="project-body">
+                    <p>{{proj.details|linebreaks}}</p>
+                </div>
+                <div class="project-req">
+                    <div class="elig">
+                        <ul>
+                            <li><b>Place of Posting :</b> {{proj.place}}</li>
+                            <li><b>Stipend (per month) :</b> {{proj.stipend}}</li>
+                            <li><b>Eligible Branches :</b> {{proj.branch}}</li>
+                            <li><b>Year of Study :</b> {{proj.year}}</li>
+                        </ul>
+                    </div>
+                    <div class="prereq">
+                        <ul>
+                            <li><b>Prerequisites :</b> {{proj.prereq}}</li>
+                            <li><b>Deliverables :</b> {{proj.deliverables}}</li>
+                            <li><b>Duration (in Weeks) :</b> {{proj.duration}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <b>Learnings :</b>
+                    <p>{{proj.learnings}}</p>
+                </div>
+            </div>
+            <input hidden name="{{proj.id}}" value="{{proj.id}}">
+            {% endfor %}
+
+             <button id="subm-btn" class = "submitProj" onclick="submitAlert(event)">Submit</button>
+            <script>
+                function submitAlert(e)
+{
+                    if(!confirm("Are you sure you want to submit? Once submitted you CANNOT change your preference.")) {
+                    e.preventDefault();
+                    }
+}
+            </script>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <link rel="stylesheet" href="{% static 'navbar.css' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #side-lg
+{
+  height: 90px;
+  position: absolute;
+  top:20px;
+  right: 40px;
+}
+@media (max-width: 605px) {
+  #side-lg{
+    height: 50px;
+  }
+}
+    </style>
+    <link rel="icon" type="image/png" href="{% static 'logo.png' %}"/>
+    <title>Industrial Learning Program</title>
+</head>
+<body>
+    <body>
+     <img src="{% static 'logo.png' %}" id="side-lg">
+        <nav>
+            <ul>
+                <a class="navbar-link" href="/">Home</a>
+                <a class="navbar-link" href="/#faq">FAQ</a>
+                <a class="navbar-link" href="/#contact">Contact Us</a>
+            </ul>
+        </nav>
+        <div>
+            <h1 class="navbar-link"
+                style="color: #e85a50; text-align:center; margin-top:10%; border-color: #e85a50; width: 15%; font-size: 200%; margin-right:auto; margin-left:auto;">SUCCESS</h1>
+        </div>
+        <div style="text-align:center; font-size:150%; color:black;">
+            You have successfully signed up. Thank you.
+        </div>
+</body>
+</html>
+

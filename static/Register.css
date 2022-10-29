@@ -1,0 +1,433 @@
+body{
+  overflow-x: hidden;
+}
+.form{
+    display: block;
+    margin: 20px;
+}
+
+.labelfield {
+  padding-right: 100px;
+}
+
+.form input{
+    background-color: transparent;
+    outline: none;
+    border: #96938b solid 1px;
+    padding: 8px 5px;
+    font-size: 1.2rem;
+    /* margin-top: 5px; */
+    border-radius: 0px;
+    align-items: flex-end;
+    width: 50%;
+}
+.form #file-upload-button{
+  background: transparent;
+}
+#t01{
+  width: 50%;
+  background: transparent;
+  padding: 8px 5px;
+}
+.form select{
+  background: transparent;
+  outline: none;
+  border: #96938b solid 1px;
+  font-size: 1.2rem;
+  border-radius: 0px;
+}
+#subm-btn
+{
+  cursor: pointer;
+}
+#subm-btn:hover {
+ color: #eae8dc;
+ background-color: #e85a50;
+}
+
+.form button{
+    margin-top: 10px;
+    background-color: transparent;
+    outline: none;
+    border: #e85a50 solid 1px;
+    color: #e85a50;
+    padding: 8px 10px;
+    font-size: 1.2rem;
+}
+
+.submitProj{
+    margin-top: 10px;
+    background-color: transparent;
+    outline: none;
+    border: #e85a50 solid 1px;
+    color: #e85a50;
+    padding: 8px 10px;
+    font-size: 1.2rem;
+    margin-left: 46.5%;
+    margin-bottom: 10px;
+}
+
+.project-card{
+    margin: 20px;
+    margin-left: 7.5%;
+    width: 85%;
+}
+.project-head{
+    display: flex;
+    border: #96938b solid 1px;
+    padding: 15px;
+    position: relative;
+}
+.container {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 25px;
+    width: 25px;
+    border: #96938b solid 1px;
+    background-color: transparent;
+  }
+  
+.button hover{
+  background-color: #e85a50;
+}
+
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: transparent;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: transparent;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #e85a50;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+.project-body{
+    padding: 15px;
+    border: #96938b solid 1px;
+    border-top: none;
+}
+.project-req{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border: #96938b solid 1px;
+    border-top: none;
+}
+
+.project-req ul{
+    list-style-type: none;
+    padding: 15px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+.prereq li{
+    text-align: right;
+}
+
+.elig{
+    border-right: #96938b solid 1px;
+}
+
+@media only screen and (max-width: 650px){
+    .project-req{
+        display: block;
+    }
+    .prereq{
+        border-left: #96938b solid 1px;
+    }
+    .prereq li{
+        text-align: left;
+    }
+}
+
+#t02{
+  float:right;
+  margin-right: 50px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+body{
+    background: #eae8dc;
+}
+    .box-model-ctm {
+    display: grid;
+    width: 60%;
+    
+    grid-auto-rows: 350px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+    margin: 3% auto;
+}
+.box-ctm {
+color: rgb(0, 0, 0);
+background-color: white;
+}
+.box-ctm:hover {
+transform: translateY(-20px);
+transition: 0.5s ease-out;
+}
+
+.box-ctm img {
+height: 100px;
+margin: 60px 35%;
+align-items: center;
+border-radius: 50px;
+}
+.box-ctm h2 {
+font-size: 24px;
+font-family: monospace;
+text-align: center;
+}
+.box-ctm p {
+font-size: 20px;
+text-align: center;
+word-wrap: break-word;
+padding: 22px 72px;
+font-family: monospace;
+}
+
+/* Secy starts here */
+
+
+.box-model-secy {
+display: grid;
+width: 75%;
+
+grid-auto-rows: 350px;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+grid-gap: 30px;
+margin: 3% auto;
+}
+.box-secy {
+color: rgb(0, 0, 0);
+background-color: white;
+}
+.box-secy:hover {
+transform: translateY(-20px);
+transition: 0.5s ease-out;
+}
+
+.box-secy img {
+height: 100px;
+margin: 60px 35%;
+align-items: center;
+border-radius: 50px;
+}
+.box-secy h2 {
+font-size: 24px;
+font-family: monospace;
+text-align: center;
+}
+.box-secy p {
+font-size: 20px;
+text-align: center;
+word-wrap: break-word;
+padding: 22px 72px;
+font-family: monospace;
+}
+
+@media (max-width: 605px) {
+.box-ctm img {
+  margin: 60px 40%;
+}
+.box-secy img {
+    margin: 60px 40%;
+  }
+}
+.red-let{
+    color: #e85a50;
+}
+.hero-text h1{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 6.5rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.hero-text{
+    margin-left: 20px;
+    margin-top: 7%;
+    /* position: absolute;
+    top: 50%;
+    transform: translateY(-55%); */
+    z-index: 2;
+}
+
+.page-title{
+    border: #e85a50 solid 1px;
+    color: #e85a50;
+    width: max-content;
+    padding: 5px 10px;
+    margin-left: 20px;
+    font-size: 3.5rem;
+}
+
+.Footer{
+    bottom: 0;
+    width: 100%;
+    background-color: #11100c7d;
+    /* Height of the footer*/ 
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+}
+.contact-cards{
+    margin: 20px;
+    color: black;
+    padding: 1%;
+}
+
+.contact-cards p{
+    font-weight: 600;
+    font-size: large;
+    margin: 10px ;
+}
+.contact-cards h3{
+    margin: 5px;
+}
+.FooterDetails{
+    display: inline;
+}
+
+.faq{
+    height: 100vh;
+}
+*{
+font-family: 'Montserrat', sans-serif !important;
+}
+
+
+
+.navbar-link{
+color: #96938b;
+text-decoration: none;
+padding: 10px 20px;
+margin: 20px;
+font-size: 1.5rem;
+position: relative;
+border: #96938b solid 1px;
+text-transform: uppercase;
+font-family: 'Montserrat', sans-serif;
+}
+.faqs{
+margin-top: 30px;
+width: 60%;
+margin: auto;
+}
+.faq-accord{
+   background-color: transparent !important;
+   box-shadow: none !important;
+   border: #96938b solid 1px;
+   border-top: none;
+   border-radius: 0px !important;
+   font-family: 'Montserrat', sans-serif !important;
+   margin: 0px 20px !important;
+}
+.page-title {
+border: #e85a50 solid 1px;
+color: #e85a50;
+width: max-content;
+padding: 5px 10px;
+margin-left: 20px;
+font-size: 3.5rem;
+}   
+.navbar-link:after {    
+background: none repeat scroll 0 0 transparent;
+bottom: 10px;
+content: "";
+display: block;
+height: 2px;
+left: 50%;
+position: absolute;
+background: #e85a50;
+transition: all 0.3s ease 0s, left 0.3s ease 0s;
+width: 0;
+}
+.navbar-link:hover:after { 
+width: 80%; 
+left: 10%; 
+}
+.active:after{
+background: none repeat scroll 0 0 transparent;
+bottom: 10px;
+content: "";
+display: block;
+height: 2px;
+left: 10%;
+position: absolute;
+background: #e85a50;
+transition: all 0.3s ease 0s, left 0.3s ease 0s;
+width: 80%;
+}
+.mob-navbar{
+display: none;
+}
+@media only screen and (max-width: 931px){
+.mob-navbar{
+display: block;
+z-index: 10000;}
+}
+@media only screen and (max-width: 890px){
+    .Footer{
+        display: block;
+    }
+    .hero-text h1{
+        font-size: 12vw;
+    }
+}
+#main-heading-projects
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

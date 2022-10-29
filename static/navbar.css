@@ -1,0 +1,56 @@
+.navbar-link{
+    color: #96938b;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 20px;
+    font-size: 1.5rem;
+    position: relative;
+    border: #96938b solid 1px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    }
+    nav{
+    padding-top: 15px;
+    margin-bottom: 30px;
+    margin-left: -10px;  
+    }
+    nav ul{
+    padding-left: 3px;
+    }
+    .navbar-link:after {    
+        background: none repeat scroll 0 0 transparent;
+        bottom: 10px;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: #e85a50;
+        transition: all 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+        }
+        .navbar-link:hover:after { 
+        width: 80%; 
+        left: 10%; 
+        }
+        .active:after{
+        background: none repeat scroll 0 0 transparent;
+        bottom: 10px;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 10%;
+        position: absolute;
+        background: #e85a50;
+        transition: all 0.3s ease 0s, left 0.3s ease 0s;
+        width: 80%;
+        }
+        .mob-navbar{
+        display: none;
+        }
+        @media only screen and (max-width: 931px){
+        .mob-navbar{
+        display: block;
+        z-index: 10000;
+        }
+        }

@@ -1,0 +1,162 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1">
+    <link rel="stylesheet" href="{% static 'Register.css' %}">
+    <link rel="stylesheet" href="{% static 'register1.css' %}">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <style>
+        #side-lg
+{
+  height: 90px;
+  position: absolute;
+  top:20px;
+  right: 40px;
+}
+@media (max-width: 605px) {
+  #side-lg{
+    height: 50px;
+  }
+}
+#subm-btn
+{
+  cursor: pointer;
+}
+#subm-btn:hover {
+ color: #eae8dc;
+ background-color: #e85a50;
+}
+    </style>
+    <link rel="icon" type="image/png" href="{% static 'logo.png' %}"/>
+    <title>Industrial Learning Program</title>
+</head>
+
+<body>
+ <img src="{% static 'logo.png' %}" id="side-lg">
+    <nav class="desktop-menu">
+        <ul>
+            <a href="/" class="navbar-link" style="color:black;">Home</a>
+            <a href="/#faq" class="navbar-link" style="color:black;">FAQ</a>
+            <a href="/#team" class="navbar-link" style="color:black;">Team</a>
+            <a href="/#contact" class="navbar-link" style="color:black;">Contact Us</a>
+            <a class="navbar-link"
+            style="color: #e85a50; border-color: #e85a50;" href="/login">Login</a>
+        </ul>
+    </nav>
+    <!-- <header id="header" class="header">
+        <nav class="menu-navigation">
+          <a href="#" class="menu-icon-toggle"><span></span></a>
+          <i class="menu-background top"></i>
+          <i class="menu-background middle"></i>
+          <i class="menu-background bottom"></i>
+          <ul class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/#team">Team</a></li>
+            <li><a href="/#contact">Contact Us</a></li>
+            <li><a href="/login">Login</a></li>
+          </ul>
+        </nav>
+      </header> -->
+    <h1 class="page-title">Register</h1>
+    <h3 style="color: #e85a50; margin-left: 20px">{{message}}</h3>
+    <div class="form">
+        <form method="post" action="register" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="pinfo align-items-center">
+                <div class="pinfo-constituents">
+                    <label class="labelfield">Full Name: </label><input type="text" placeholder="Full Name"
+                        name="fullname" required></input>
+                </div><br></br>
+                <div class="pinfo-constituents">
+                    <label class="labelfield">Email (LDAP): </label><input type="email" placeholder="Email Id"
+                        name="email" required></input>
+                </div><br></br>
+                <div class="pinfo-constituents">
+                    <label class="labelfield">Roll Number</label><input type="text" placeholder="Roll Number"
+                        name="rollno" required></input>
+                </div><br></br>
+                <div class="pinfo-constituents">
+                    <label class="labelfield">Password: </label><input placeholder="Password" name="password"
+                        type="password" required></input>
+                </div><br></br>
+                <div class="pinfo-constituents">
+                    <label class="labelfield">Contact No.: </label><input type="text" placeholder="Phone No." name="phoneno" required></input>
+                </div><br></br>
+                <div class="pinfo-constituents">
+                    <label class="labelfield">Department: </label>
+                    <select id="t01" name="dept" placeholder="Department">
+                        <option value=""></option>
+                        <option value="Aerospace">Aerospace</option>
+                        <option value="BSBE">BSBE</option>
+                        <option value="Chemical">Chemical</option>
+                        <option value="Civil">Civil</option>
+                        <option value="CSE">CSE</option>
+                        <option value="Earth Science">Earth Science</option>
+                        <option value="Electrical">Electrical</option>
+                        <option value="Energy">Energy</option>
+                        {% comment %} <option value="EP">EP</option> {% endcomment %}
+                        <option value="ESED">ESED</option>
+                        <option value="HSS">HSS</option>
+                        <option value="IEOR">IEOR</option>
+                        <option value="MEMS">MEMS</option>
+                        <option value="Mechanical">Mechanical</option>
+                        <option value="Chemistry">Chemistry</option>
+                        <option value="Mathematics">Mathematics</option>
+                        {% comment %} <option value="CSE">CSE</option> {% endcomment %}
+                        <option value="Physics/EP">Physics/EP</option>
+                        <option value="Other">Other</option>
+
+                    </select><br></br>
+                    
+                    
+                </div>
+                <br></br>
+                <div class="pinfo-constituents"><input type="text" placeholder="In case of other" name="dept"></input></div>
+                <br></br>
+                <br></br>
+                <div class="pinfo-constituents">
+                    <label class="labelfield">Year of Study: </label>
+                    <select id="t01" name="yos" placeholder="Year of Study">
+                        <option value=""></option>
+                        <option value="2nd year UG/DD">2nd year UG/DD</option>
+                        <option value="3rd year UG/DD">3rd year UG/DD</option>
+                        <option value="4th year DD">4th year DD</option>
+                        <option value="1st year MSc">1st year MSc</option>
+                        <option value="1st year MTech">1st year MTech</option>
+                        {% comment %} <option value="1st year PhD">1st year PhD</option> {% endcomment %}
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <br></br>
+                <div class="pinfo-constituents"><input type="text" placeholder="In case of other" name="yos"></input></div>
+                <br></br>
+                <br></br>
+                <div class="pinfo-constituents">
+                    <label class="labelfield">Resume (1/2 page): </label><input id="t03" type="file" name="resume"
+                        placeholder="Resume"></input>
+                </div><br></br><br></br>
+            </div>
+            
+                <button id="subm-btn" class="submit" id="t02">Sign Up</button>
+                <p>Already Registered? <a href="/login" style="color: #e85a50; text-decoration: none; cursor: pointer;">Login</a></p>
+            
+            {% comment %} {% if message %}
+                <div class="alert alert-{{class}}">
+                    {{message}}
+                </div>
+            {% endif %} {% endcomment %}
+
+        </form>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script src="{% static 'nav.js' %}"></script>
+        {% comment %} <p>{{message}}</p> {% endcomment %}
+</body>
+
+</html>
